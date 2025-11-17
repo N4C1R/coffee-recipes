@@ -366,7 +366,180 @@ document.addEventListener('DOMContentLoaded', function() {
     initRecipeCardInteractions();
     initParallaxEffect();
     initPerformanceOptimizations();
+    initInteractiveCoffeeCup();
     
+    // Interactive Coffee Cup Feature
+    function initInteractiveCoffeeCup() {
+        const coffeeData = {
+            'espresso': {
+                name: 'Espresso',
+                ingredients: [
+                    { name: 'Coffee', amount: '18-20g' },
+                    { name: 'Water', amount: '36-40g' }
+                ],
+                caffeine: '63-75mg',
+                calories: '3-5',
+                layers: ['espresso']
+            },
+            'cappuccino': {
+                name: 'Cappuccino',
+                ingredients: [
+                    { name: 'Espresso', amount: '1 shot' },
+                    { name: 'Steamed Milk', amount: '100ml' },
+                    { name: 'Milk Foam', amount: '50ml' }
+                ],
+                caffeine: '63-75mg',
+                calories: '80-120',
+                layers: ['espresso', 'milk', 'foam']
+            },
+            'latte': {
+                name: 'Latte',
+                ingredients: [
+                    { name: 'Espresso', amount: '1-2 shots' },
+                    { name: 'Steamed Milk', amount: '200-250ml' },
+                    { name: 'Microfoam', amount: 'thin layer' }
+                ],
+                caffeine: '63-125mg',
+                calories: '120-180',
+                layers: ['espresso', 'milk']
+            },
+            'flat-white': {
+                name: 'Flat White',
+                ingredients: [
+                    { name: 'Espresso', amount: '2 shots' },
+                    { name: 'Steamed Milk', amount: '120ml' },
+                    { name: 'Silky Foam', amount: 'very thin' }
+                ],
+                caffeine: '125-150mg',
+                calories: '100-140',
+                layers: ['espresso', 'milk']
+            },
+            'pour-over': {
+                name: 'Pour Over',
+                ingredients: [
+                    { name: 'Coffee', amount: '20g' },
+                    { name: 'Water', amount: '300g' }
+                ],
+                caffeine: '95-120mg',
+                calories: '0-2',
+                layers: ['water']
+            },
+            'french-press': {
+                name: 'French Press',
+                ingredients: [
+                    { name: 'Coffee', amount: '30g' },
+                    { name: 'Water', amount: '500g' }
+                ],
+                caffeine: '120-150mg',
+                calories: '0-2',
+                layers: ['water']
+            }
+        };
+
+        const recipeCards = document.querySelectorAll('.recipe-card');
+        const coffeeCup = document.querySelector('.coffee-cup');
+        const coffeeName = document.getElementById('coffee-name');
+        const ingredientList = document.getElementById('ingredient-list');
+        const caffeineContent = document.getElementById('caffeine-content');
+        const calorieContent = document.getElementById('calorie-content');
+        const ingredientInfo = document.querySelector('.ingredient-info');
+
+        function updateCoffeeCup(coffeeType) {
+            const coffee = coffeeData[coffeeType];
+            if (!coffee) return;
+
+            // Reset all ingredients
+            document.querySelectorAll('.ingredient').forEach(ingredient => {
+                ingredient.style.opacity = '0';
+                ingredient.style.height = '0';
+                ingredient.classList.remove('active', 'pouring');
+            });
+
+            // Animate ingredients based on coffee type
+            coffee.layers.forEach((layer, index) => {
+                setTimeout(() => {
+                    const ingredientElement = document.querySelector(`[data-ingredient="${layer}"]`);
+                    if (ingredientElement) {
+                        ingredientElement.style.opacity = '1';
+                        ingredientElement.classList.add('active', 'pouring');
+                        
+                        // Set appropriate height for each ingredient
+                        const heights = {
+                            'espresso': '30px',
+                            'milk': '40px',
+                            'foam': '20px',
+                            'water': '80px'
+                        };
+                        ingredientElement.style.height = heights[layer] || '25px';
+                    }
+                }, index * 300);
+            });
+
+            // Update ingredient information panel
+            setTimeout(() => {
+                coffeeName.textContent = coffee.name;
+                
+                // Update ingredient list
+                ingredientList.innerHTML = coffee.ingredients.map(ingredient => `
+                    <div class="ingredient-item">
+                        <span class="ingredient-name">${ingredient.name}</span>
+                        <span class="ingredient-amount">${ingredient.amount}</span>
+                    </div>
+                `).join('');
+
+                // Update nutrition info
+                caffeineContent.textContent = coffee.caffeine;
+                calorieContent.textContent = coffee.calories;
+
+                // Show ingredient panel
+                ingredientInfo.classList.add('active');
+                
+                // Enhance steam animation
+                coffeeCup.classList.add('active');
+            }, 500);
+        }
+
+        // Add click handlers to recipe cards
+        recipeCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const coffeeType = this.getAttribute('data-category');
+                const recipeName = this.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                
+                // Map recipe names to coffee types
+                const typeMapping = {
+                    'classic-espresso': 'espresso',
+                    'ristretto': 'espresso',
+                    'cappuccino': 'cappuccino',
+                    'latte': 'latte',
+                    'flat-white': 'flat-white',
+                    'pour-over': 'pour-over',
+                    'french-press': 'french-press',
+                    'aeropress': 'pour-over'
+                };
+                
+                const mappedType = typeMapping[recipeName] || coffeeType;
+                updateCoffeeCup(mappedType);
+                
+                // Add visual feedback
+                this.style.transform = 'translateY(-12px) scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+
+        // Add hover effect to show ingredient info
+        coffeeCup.addEventListener('mouseenter', function() {
+            if (ingredientInfo.classList.contains('active')) {
+                ingredientInfo.style.transform = 'scale(1.05)';
+            }
+        });
+
+        coffeeCup.addEventListener('mouseleave', function() {
+            ingredientInfo.style.transform = 'scale(1)';
+        });
+    }
+
     // Console easter egg
     console.log(`
     ☕ Coffee Alchemy - Interactive Brewing Guide

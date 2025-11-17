@@ -355,12 +355,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .coffee-cup-container {
     position: relative;
     width: 300px;
-    height: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .coffee-cup {
@@ -1930,6 +1935,235 @@ section {
     
     .mission-values {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Interactive Coffee Cup Styles */
+.coffee-ingredients {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    right: 10px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: var(--transition);
+}
+
+.ingredient {
+    border-radius: 4px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.ingredient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.8s ease-out;
+}
+
+.ingredient.active::before {
+    left: 100%;
+}
+
+.ingredient.espresso {
+    background: linear-gradient(135deg, #3C2E26 0%, #8B4513 100%);
+    height: 30px;
+}
+
+.ingredient.milk {
+    background: linear-gradient(135deg, #FFF8DC 0%, #F5DEB3 100%);
+    height: 40px;
+}
+
+.ingredient.foam {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 100%);
+    height: 20px;
+}
+
+.ingredient.water {
+    background: linear-gradient(135deg, #E6F3FF 0%, #B0E0E6 100%);
+    height: 25px;
+}
+
+.ingredient-info {
+    position: absolute;
+    top: 50px;
+    right: -320px;
+    width: 280px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    z-index: 10;
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.ingredient-info.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.ingredient-info h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--white);
+    text-align: center;
+}
+
+.ingredient-list {
+    margin-bottom: 20px;
+}
+
+.ingredient-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ingredient-item:last-child {
+    border-bottom: none;
+}
+
+.ingredient-name {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.ingredient-amount {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.nutrition-info {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.nutrition-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.nutrition-item:last-child {
+    margin-bottom: 0;
+}
+
+.nutrition-label {
+    color: rgba(255, 255, 255,  0.8);
+    font-size: 14px;
+}
+
+.nutrition-value {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Recipe Card Interactions */
+.recipe-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.recipe-card::before {
+    content: '👆 Click to see ingredients';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 5;
+}
+
+.recipe-card:hover::before {
+    opacity: 1;
+    top: -15px;
+}
+
+/* Coffee Cup Animations */
+@keyframes pour-ingredient {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.ingredient.pouring {
+    animation: pour-ingredient 0.8s ease-out forwards;
+}
+
+@keyframes steam-enhanced {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-10px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-30px) scale(1.2);
+    }
+}
+
+.coffee-cup.active .steam {
+    animation: steam-enhanced 1.5s ease-in-out infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .coffee-cup-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ingredient-info {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+        transform: none !important;
+    }
+    
+    .ingredient-info.active {
+        position: static;
+        transform: none !important;
+    }
+    
+    .coffee-cup {
+        margin: 0 auto;
     }
 }
 
