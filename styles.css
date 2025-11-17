@@ -325,6 +325,7 @@ body {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    line-height: 1;
 }
 
 .btn-primary {

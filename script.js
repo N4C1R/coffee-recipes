@@ -370,6 +370,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Interactive Coffee Cup Feature
     function initInteractiveCoffeeCup() {
+        // Initialize empty coffee cup
+        const ingredients = document.querySelectorAll('.ingredient');
+        ingredients.forEach(ingredient => {
+            ingredient.style.opacity = '0';
+            ingredient.style.height = '0';
+            ingredient.classList.remove('active', 'pouring');
+        });
+
         const coffeeData = {
             'espresso': {
                 name: 'Espresso',
@@ -519,6 +527,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 const mappedType = typeMapping[recipeName] || coffeeType;
                 updateCoffeeCup(mappedType);
+                
+                // Scroll to coffee cup with smooth animation
+                setTimeout(() => {
+                    const heroVisual = document.querySelector('.hero-visual');
+                    if (heroVisual) {
+                        const headerHeight = 80;
+                        const targetPosition = heroVisual.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }, 300);
                 
                 // Add visual feedback
                 this.style.transform = 'translateY(-12px) scale(1.02)';
