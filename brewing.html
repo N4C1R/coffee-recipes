@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brewing Guide - Coffee Alchemy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="gradient-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="particle-field"></div>
+    </div>
+
+    <header class="glass-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>Coffee Alchemy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="recipes.html" class="nav-link">Recipes</a></li>
+                <li><a href="brewing.html" class="nav-link active">Brewing Guide</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="brewing-hero">
+            <div class="container">
+                <div class="brewing-hero-content">
+                    <h1 class="brewing-hero-title">The Science of Brewing</h1>
+                    <p class="brewing-hero-subtitle">Master the four fundamental variables that create perfect coffee</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="brewing-variables">
+            <div class="container">
+                <div class="variables-grid">
+                    <div class="variable-card glass-card">
+                        <div class="variable-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Coffee-to-Water Ratio</h3>
+                        <p>The foundation of coffee strength and flavor intensity</p>
+                        
+                        <div class="ratio-calculator">
+                            <h4>Ratio Calculator</h4>
+                            <div class="calc-input">
+                                <label for="coffee-amount">Coffee (g):</label>
+                                <input type="number" id="coffee-amount" value="20" min="1" max="100">
+                            </div>
+                            <div class="calc-input">
+                                <label for="ratio-strength">Strength:</label>
+                                <select id="ratio-strength">
+                                    <option value="12">Strong (1:12)</option>
+                                    <option value="15" selected>Balanced (1:15)</option>
+                                    <option value="18">Light (1:18)</option>
+                                </select>
+                            </div>
+                            <div class="calc-result">
+                                <span>Water needed: <strong id="water-result">300g</strong></span>
+                            </div>
+                        </div>
+
+                        <div class="ratio-guide">
+                            <h4>Recommended Ratios</h4>
+                            <div class="ratio-item">
+                                <span>Espresso</span>
+                                <span>1:2</span>
+                            </div>
+                            <div class="ratio-item">
+                                <span>Pour Over</span>
+                                <span>1:15</span>
+                            </div>
+                            <div class="ratio-item">
+                                <span>French Press</span>
+                                <span>1:12</span>
+                            </div>
+                            <div class="ratio-item">
+                                <span>Cold Brew</span>
+                                <span>1:8</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="variable-card glass-card">
+                        <div class="variable-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h3>Water Temperature</h3>
+                        <p>Optimal temperature ranges for different brewing methods</p>
+                        
+                        <div class="temp-visualization">
+                            <div class="temp-scale">
+                                <div class="temp-marker" data-temp="85">
+                                    <span>85°C</span>
+                                    <div class="temp-label">AeroPress</div>
+                                </div>
+                                <div class="temp-marker" data-temp="93">
+                                    <span>93°C</span>
+                                    <div class="temp-label">French Press</div>
+                                </div>
+                                <div class="temp-marker" data-temp="94">
+                                    <span>94°C</span>
+                                    <div class="temp-label">Espresso</div>
+                                </div>
+                                <div class="temp-marker active" data-temp="96">
+                                    <span>96°C</span>
+                                    <div class="temp-label">Pour Over</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="temp-effects">
+                            <h4>Temperature Effects</h4>
+                            <div class="effect-item">
+                                <span class="effect-label">Too Hot (>98°C)</span>
+                                <span class="effect-result">Bitter, over-extracted</span>
+                            </div>
+                            <div class="effect-item">
+                                <span class="effect-label">Optimal (90-96°C)</span>
+                                <span class="effect-result">Balanced, sweet</span>
+                            </div>
+                            <div class="effect-item">
+                                <span class="effect-label">Too Cool (<85°C)</span>
+                                <span class="effect-result">Sour, under-extracted</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="variable-card glass-card">
+                        <div class="variable-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Extraction Time</h3>
+                        <p>Contact time between water and coffee grounds</p>
+                        
+                        <div class="time-chart">
+                            <div class="time-method">
+                                <div class="method-name">Espresso</div>
+                                <div class="time-bar">
+                                    <div class="time-fill" style="width: 25%"></div>
+                                </div>
+                                <div class="method-time">25-30s</div>
+                            </div>
+                            <div class="time-method">
+                                <div class="method-name">AeroPress</div>
+                                <div class="time-bar">
+                                    <div class="time-fill" style="width: 40%"></div>
+                                </div>
+                                <div class="method-time">1-2min</div>
+                            </div>
+                            <div class="time-method">
+                                <div class="method-name">Pour Over</div>
+                                <div class="time-bar">
+                                    <div class="time-fill" style="width: 75%"></div>
+                                </div>
+                                <div class="method-time">3-4min</div>
+                            </div>
+                            <div class="time-method">
+                                <div class="method-name">French Press</div>
+                                <div class="time-bar">
+                                    <div class="time-fill" style="width: 80%"></div>
+                                </div>
+                                <div class="method-time">4min</div>
+                            </div>
+                            <div class="time-method">
+                                <div class="method-name">Cold Brew</div>
+                                <div class="time-bar">
+                                    <div class="time-fill" style="width: 100%"></div>
+                                </div>
+                                <div class="method-time">12-24h</div>
+                            </div>
+                        </div>
+
+                        <div class="time-tips">
+                            <h4>Time Optimization Tips</h4>
+                            <ul>
+                                <li>Grind finer to increase extraction time</li>
+                                <li>Grind coarser to decrease extraction time</li>
+                                <li>Longer time = more extraction (risk of bitterness)</li>
+                                <li>Shorter time = less extraction (risk of sourness)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="variable-card glass-card">
+                        <div class="variable-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Grind Size</h3>
+                        <p>Particle size affects extraction rate and brewing method</p>
+                        
+                        <div class="grind-visualization">
+                            <div class="grind-scale">
+                                <div class="grind-level" data-grind="extra-fine">
+                                    <div class="grind-particles">
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                    </div>
+                                    <span>Extra Fine</span>
+                                    <small>Turkish</small>
+                                </div>
+                                <div class="grind-level" data-grind="fine">
+                                    <div class="grind-particles">
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                    </div>
+                                    <span>Fine</span>
+                                    <small>Espresso</small>
+                                </div>
+                                <div class="grind-level" data-grind="medium-fine">
+                                    <div class="grind-particles">
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                    </div>
+                                    <span>Medium-Fine</span>
+                                    <small>Pour Over</small>
+                                </div>
+                                <div class="grind-level" data-grind="medium">
+                                    <div class="grind-particles">
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                        <div class="particle"></div>
+                                    </div>
+                                    <span>Medium</span>
+                                    <small>Drip</small>
+                                </div>
+                                <div class="grind-level" data-grind="coarse">
+                                    <div class="grind-particles">
+                                        <div class="particle large"></div>
+                                        <div class="particle large"></div>
+                                        <div class="particle large"></div>
+                                    </div>
+                                    <span>Coarse</span>
+                                    <small>French Press</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grind-effects">
+                            <h4>Grind Size Effects</h4>
+                            <div class="effect-item">
+                                <span class="effect-label">Too Fine</span>
+                                <span class="effect-result">Over-extraction, bitter taste</span>
+                            </div>
+                            <div class="effect-item">
+                                <span class="effect-label">Optimal</span>
+                                <span class="effect-result">Balanced extraction</span>
+                            </div>
+                            <div class="effect-item">
+                                <span class="effect-label">Too Coarse</span>
+                                <span class="effect-result">Under-extraction, sour taste</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brewing-methods">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Brewing Methods Comparison</h2>
+                    <p class="section-subtitle">Choose the right method for your taste preferences</p>
+                </div>
+
+                <div class="methods-comparison">
+                    <div class="comparison-table glass-card">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Body</th>
+                                    <th>Clarity</th>
+                                    <th>Difficulty</th>
+                                    <th>Time</th>
+                                    <th>Best For</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Espresso</strong></td>
+                                    <td><span class="rating">●●●●●</span></td>
+                                    <td><span class="rating">●●●○○</span></td>
+                                    <td><span class="rating">●●●●●</span></td>
+                                    <td>25-30s</td>
+                                    <td>Milk-based drinks</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pour Over</strong></td>
+                                    <td><span class="rating">●●○○○</span></td>
+                                    <td><span class="rating">●●●●●</span></td>
+                                    <td><span class="rating">●●●○○</span></td>
+                                    <td>3-4min</td>
+                                    <td>Single origins</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>French Press</strong></td>
+                                    <td><span class="rating">●●●●○</span></td>
+                                    <td><span class="rating">●●○○○</span></td>
+                                    <td><span class="rating">●●○○○</span></td>
+                                    <td>4min</td>
+                                    <td>Full-bodied coffee</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>AeroPress</strong></td>
+                                    <td><span class="rating">●●●○○</span></td>
+                                    <td><span class="rating">●●●●○</span></td>
+                                    <td><span class="rating">●●○○○</span></td>
+                                    <td>2min</td>
+                                    <td>Quick, clean cup</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cold Brew</strong></td>
+                                    <td><span class="rating">●●●●○</span></td>
+                                    <td><span class="rating">●●●○○</span></td>
+                                    <td><span class="rating">●○○○○</span></td>
+                                    <td>12-24h</td>
+                                    <td>Smooth, low-acid</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="troubleshooting">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Troubleshooting Guide</h2>
+                    <p class="section-subtitle">Fix common coffee brewing problems</p>
+                </div>
+
+                <div class="troubleshooting-grid">
+                    <div class="trouble-card glass-card">
+                        <div class="trouble-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <h3>Bitter Taste</h3>
+                        <div class="trouble-causes">
+                            <h4>Possible Causes:</h4>
+                            <ul>
+                                <li>Over-extraction</li>
+                                <li>Water too hot</li>
+                                <li>Grind too fine</li>
+                                <li>Brew time too long</li>
+                            </ul>
+                        </div>
+                        <div class="trouble-solutions">
+                            <h4>Solutions:</h4>
+                            <ul>
+                                <li>Use coarser grind</li>
+                                <li>Lower water temperature</li>
+                                <li>Reduce brew time</li>
+                                <li>Use less coffee</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="trouble-card glass-card">
+                        <div class="trouble-icon">
+                            <i class="fas fa-lemon"></i>
+                        </div>
+                        <h3>Sour Taste</h3>
+                        <div class="trouble-causes">
+                            <h4>Possible Causes:</h4>
+                            <ul>
+                                <li>Under-extraction</li>
+                                <li>Water too cool</li>
+                                <li>Grind too coarse</li>
+                                <li>Brew time too short</li>
+                            </ul>
+                        </div>
+                        <div class="trouble-solutions">
+                            <h4>Solutions:</h4>
+                            <ul>
+                                <li>Use finer grind</li>
+                                <li>Increase water temperature</li>
+                                <li>Extend brew time</li>
+                                <li>Use more coffee</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="trouble-card glass-card">
+                        <div class="trouble-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Weak Coffee</h3>
+                        <div class="trouble-causes">
+                            <h4>Possible Causes:</h4>
+                            <ul>
+                                <li>Too much water</li>
+                                <li>Not enough coffee</li>
+                                <li>Grind too coarse</li>
+                                <li>Water too cool</li>
+                            </ul>
+                        </div>
+                        <div class="trouble-solutions">
+                            <h4>Solutions:</h4>
+                            <ul>
+                                <li>Use stronger ratio (1:12)</li>
+                                <li>Increase coffee dose</li>
+                                <li>Use finer grind</li>
+                                <li>Check water temperature</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="trouble-card glass-card">
+                        <div class="trouble-icon">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h3>Clogging</h3>
+                        <div class="trouble-causes">
+                            <h4>Possible Causes:</h4>
+                            <ul>
+                                <li>Grind too fine</li>
+                                <li>Too much coffee</li>
+                                <li>Poor quality grinder</li>
+                                <li>Stale coffee</li>
+                            </ul>
+                        </div>
+                        <div class="trouble-solutions">
+                            <h4>Solutions:</h4>
+                            <ul>
+                                <li>Use coarser grind</li>
+                                <li>Reduce coffee dose</li>
+                                <li>Invest in burr grinder</li>
+                                <li>Use fresh coffee</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Alchemy</h3>
+                    <p>Master the art and science of perfect coffee brewing.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="brewing.html">Brewing Guide</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Coffee Alchemy. Crafted with passion for perfect coffee.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Brewing-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ratio calculator
+            const coffeeInput = document.getElementById('coffee-amount');
+            const ratioSelect = document.getElementById('ratio-strength');
+            const waterResult = document.getElementById('water-result');
+
+            function updateRatio() {
+                const coffee = parseFloat(coffeeInput.value) || 0;
+                const ratio = parseFloat(ratioSelect.value) || 15;
+                const water = coffee * ratio;
+                waterResult.textContent = `${water}g`;
+            }
+
+            coffeeInput.addEventListener('input', updateRatio);
+            ratioSelect.addEventListener('change', updateRatio);
+
+            // Temperature scale interaction
+            const tempMarkers = document.querySelectorAll('.temp-marker');
+            tempMarkers.forEach(marker => {
+                marker.addEventListener('click', function() {
+                    tempMarkers.forEach(m => m.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Grind size visualization
+            const grindLevels = document.querySelectorAll('.grind-level');
+            grindLevels.forEach(level => {
+                level.addEventListener('click', function() {
+                    grindLevels.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

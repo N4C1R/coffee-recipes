@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Recipes - Coffee Alchemy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="gradient-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="particle-field"></div>
+    </div>
+
+    <header class="glass-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>Coffee Alchemy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="recipes.html" class="nav-link active">Recipes</a></li>
+                <li><a href="brewing.html" class="nav-link">Brewing Guide</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="recipes-hero">
+            <div class="container">
+                <div class="recipes-hero-content">
+                    <h1 class="recipes-hero-title">Coffee Recipes</h1>
+                    <p class="recipes-hero-subtitle">Master the art of coffee brewing with our comprehensive collection of professional recipes</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detailed-recipes">
+            <div class="container">
+                <div class="recipe-filters">
+                    <button class="filter-btn active" data-filter="all">All Recipes</button>
+                    <button class="filter-btn" data-filter="espresso">Espresso Based</button>
+                    <button class="filter-btn" data-filter="milk-based">Milk Based</button>
+                    <button class="filter-btn" data-filter="manual">Manual Brew</button>
+                    <button class="filter-btn" data-filter="specialty">Specialty</button>
+                </div>
+
+                <div class="detailed-recipes-grid">
+                    <!-- Espresso Recipes -->
+                    <div class="detailed-recipe-card glass-card" data-category="espresso">
+                        <div class="recipe-header">
+                            <div class="recipe-icon espresso-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Classic Espresso</h3>
+                                <p>The foundation of all coffee drinks</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Dose:</strong> 18-20g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Yield:</strong> 36-40g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 25-30s</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 94°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Grind 18-20g of coffee to fine consistency</li>
+                                    <li>Dose and distribute evenly in portafilter</li>
+                                    <li>Tamp with 30lbs of pressure</li>
+                                    <li>Extract for 25-30 seconds</li>
+                                    <li>Stop at 36-40g yield</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-recipe-card glass-card" data-category="espresso">
+                        <div class="recipe-header">
+                            <div class="recipe-icon ristretto-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Ristretto</h3>
+                                <p>Concentrated espresso shot</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Dose:</strong> 18-20g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Yield:</strong> 18-20g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 15-20s</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 94°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Use same dose as regular espresso</li>
+                                    <li>Grind slightly finer than espresso</li>
+                                    <li>Stop extraction at half the volume</li>
+                                    <li>Aim for 15-20 second extraction</li>
+                                    <li>Result: Intense, syrupy shot</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milk Based Recipes -->
+                    <div class="detailed-recipe-card glass-card" data-category="milk-based">
+                        <div class="recipe-header">
+                            <div class="recipe-icon cappuccino-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Cappuccino</h3>
+                                <p>Perfect balance of espresso and milk</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Espresso:</strong> 1 shot</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Milk:</strong> 150ml</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 2-3min</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 65°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Pull a single shot of espresso</li>
+                                    <li>Steam 150ml milk to 65°C</li>
+                                    <li>Create thick microfoam</li>
+                                    <li>Pour milk over espresso</li>
+                                    <li>Top with 2cm of foam</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-recipe-card glass-card" data-category="milk-based">
+                        <div class="recipe-header">
+                            <div class="recipe-icon latte-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Latte</h3>
+                                <p>Smooth and creamy milk coffee</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Espresso:</strong> 1-2 shots</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Milk:</strong> 200-250ml</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 2-3min</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 65°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Pull 1-2 shots of espresso</li>
+                                    <li>Steam milk to silky microfoam</li>
+                                    <li>Start with pitcher high</li>
+                                    <li>Lower for latte art</li>
+                                    <li>Finish with thin foam layer</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-recipe-card glass-card" data-category="milk-based">
+                        <div class="recipe-header">
+                            <div class="recipe-icon flat-white-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Flat White</h3>
+                                <p>Silky microfoam perfection</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Espresso:</strong> 2 shots</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Milk:</strong> 120ml</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 2-3min</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 60°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Pull double shot of espresso</li>
+                                    <li>Steam small amount of milk</li>
+                                    <li>Create very thin microfoam</li>
+                                    <li>Pour smoothly and quickly</li>
+                                    <li>No thick foam layer</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manual Brew Recipes -->
+                    <div class="detailed-recipe-card glass-card" data-category="manual">
+                        <div class="recipe-header">
+                            <div class="recipe-icon pour-over-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Pour Over (V60)</h3>
+                                <p>Clean and bright extraction</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Coffee:</strong> 20g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Water:</strong> 300g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 3-4min</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 96°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Rinse filter and preheat dripper</li>
+                                    <li>Add 20g medium-fine ground coffee</li>
+                                    <li>Bloom with 40g water for 30s</li>
+                                    <li>Pour in circular motions to 300g</li>
+                                    <li>Total brew time: 3-4 minutes</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-recipe-card glass-card" data-category="manual">
+                        <div class="recipe-header">
+                            <div class="recipe-icon french-press-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>French Press</h3>
+                                <p>Full-bodied immersion brewing</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Coffee:</strong> 30g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Water:</strong> 500g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 4min</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 93°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Add 30g coarse ground coffee</li>
+                                    <li>Pour 500g hot water (93°C)</li>
+                                    <li>Stir gently and place lid</li>
+                                    <li>Steep for 4 minutes</li>
+                                    <li>Press plunger down slowly</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-recipe-card glass-card" data-category="manual">
+                        <div class="recipe-header">
+                            <div class="recipe-icon aeropress-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>AeroPress</h3>
+                                <p>Versatile pressure brewing</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Coffee:</strong> 18g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Water:</strong> 250g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 2min</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 85°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Add 18g medium-fine ground coffee</li>
+                                    <li>Pour 250g water (85°C)</li>
+                                    <li>Stir for 10 seconds</li>
+                                    <li>Steep for 1 minute</li>
+                                    <li>Press gently for 30 seconds</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialty Recipes -->
+                    <div class="detailed-recipe-card glass-card" data-category="specialty">
+                        <div class="recipe-header">
+                            <div class="recipe-icon cold-brew-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Cold Brew</h3>
+                                <p>Smooth, low-acid coffee concentrate</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Coffee:</strong> 100g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Water:</strong> 1000g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 12-24h</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> Room Temp</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Coarsely grind 100g coffee beans</li>
+                                    <li>Mix with 1000g cold water</li>
+                                    <li>Steep for 12-24 hours</li>
+                                    <li>Filter through fine mesh</li>
+                                    <li>Dilute concentrate 1:1 with water</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detailed-recipe-card glass-card" data-category="specialty">
+                        <div class="recipe-header">
+                            <div class="recipe-icon turkish-icon"></div>
+                            <div class="recipe-title-section">
+                                <h3>Turkish Coffee</h3>
+                                <p>Traditional unfiltered brewing</p>
+                            </div>
+                        </div>
+                        <div class="recipe-details">
+                            <div class="recipe-specs-grid">
+                                <div class="spec-item">
+                                    <i class="fas fa-balance-scale"></i>
+                                    <span><strong>Coffee:</strong> 10g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span><strong>Water:</strong> 100g</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><strong>Time:</strong> 3-4min</span>
+                                </div>
+                                <div class="spec-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <span><strong>Temp:</strong> 100°C</span>
+                                </div>
+                            </div>
+                            <div class="recipe-steps">
+                                <h4>Brewing Steps:</h4>
+                                <ol>
+                                    <li>Add 10g extra fine coffee to cezve</li>
+                                    <li>Add 100g cold water and sugar to taste</li>
+                                    <li>Stir well and heat slowly</li>
+                                    <li>Remove foam when it forms</li>
+                                    <li>Pour into cup with grounds</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Alchemy</h3>
+                    <p>Master the art and science of perfect coffee brewing.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="brewing.html">Brewing Guide</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Coffee Alchemy. Crafted with passion for perfect coffee.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

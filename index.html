@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Alchemy - Futuristic Brewing Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="gradient-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="particle-field"></div>
+    </div>
+
+    <header class="glass-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fas fa-coffee"></i>
+                <span>Coffee Alchemy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#recipes" class="nav-link">Recipes</a></li>
+                <li><a href="#brewing" class="nav-link">Brewing</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">The Art of</span>
+                        <span class="title-line accent">Perfect Coffee</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Discover the science and artistry behind exceptional coffee brewing. 
+                        From traditional methods to cutting-edge techniques.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary">
+                            <span>Explore Recipes</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            <span>Brewing Guide</span>
+                            <i class="fas fa-play"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="coffee-cup-container">
+                        <div class="coffee-cup">
+                            <div class="coffee-liquid"></div>
+                            <div class="steam"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes" class="recipes-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Coffee Recipes</h2>
+                    <p class="section-subtitle">Professional recipes for every coffee lover</p>
+                </div>
+                
+                <div class="recipe-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="espresso">Espresso</button>
+                    <button class="filter-btn" data-filter="milk-based">Milk Based</button>
+                    <button class="filter-btn" data-filter="manual">Manual Brew</button>
+                </div>
+
+                <div class="recipes-grid">
+                    <!-- Espresso Recipes -->
+                    <div class="recipe-card glass-card" data-category="espresso">
+                        <div class="recipe-image">
+                            <div class="coffee-icon espresso-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Classic Espresso</h3>
+                            <p>The foundation of all coffee drinks</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 25-30s</span>
+                                <span><i class="fas fa-thermometer-half"></i> 94°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card glass-card" data-category="espresso">
+                        <div class="recipe-image">
+                            <div class="coffee-icon ristretto-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Ristretto</h3>
+                            <p>Concentrated espresso shot</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 15-20s</span>
+                                <span><i class="fas fa-thermometer-half"></i> 94°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Milk-Based Recipes -->
+                    <div class="recipe-card glass-card" data-category="milk-based">
+                        <div class="recipe-image">
+                            <div class="coffee-icon cappuccino-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Cappuccino</h3>
+                            <p>Perfect balance of espresso and milk</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 2-3min</span>
+                                <span><i class="fas fa-thermometer-half"></i> 65°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:3:3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card glass-card" data-category="milk-based">
+                        <div class="recipe-image">
+                            <div class="coffee-icon latte-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Latte</h3>
+                            <p>Smooth and creamy milk coffee</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 2-3min</span>
+                                <span><i class="fas fa-thermometer-half"></i> 65°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:4:1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card glass-card" data-category="milk-based">
+                        <div class="recipe-image">
+                            <div class="coffee-icon flat-white-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Flat White</h3>
+                            <p>Silky microfoam perfection</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 2-3min</span>
+                                <span><i class="fas fa-thermometer-half"></i> 60°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Manual Brew Recipes -->
+                    <div class="recipe-card glass-card" data-category="manual">
+                        <div class="recipe-image">
+                            <div class="coffee-icon pour-over-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>Pour Over</h3>
+                            <p>Clean and bright extraction</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 3-4min</span>
+                                <span><i class="fas fa-thermometer-half"></i> 96°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:15</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card glass-card" data-category="manual">
+                        <div class="recipe-image">
+                            <div class="coffee-icon french-press-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>French Press</h3>
+                            <p>Full-bodied immersion brewing</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 4min</span>
+                                <span><i class="fas fa-thermometer-half"></i> 93°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:12</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="recipe-card glass-card" data-category="manual">
+                        <div class="recipe-image">
+                            <div class="coffee-icon aeropress-icon"></div>
+                        </div>
+                        <div class="recipe-content">
+                            <h3>AeroPress</h3>
+                            <p>Versatile pressure brewing</p>
+                            <div class="recipe-specs">
+                                <span><i class="fas fa-clock"></i> 2min</span>
+                                <span><i class="fas fa-thermometer-half"></i> 85°C</span>
+                                <span><i class="fas fa-balance-scale"></i> 1:14</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="brewing" class="brewing-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Brewing Science</h2>
+                    <p class="section-subtitle">Master the variables that create perfect coffee</p>
+                </div>
+
+                <div class="brewing-grid">
+                    <div class="brewing-card glass-card">
+                        <div class="brewing-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <h3>Temperature</h3>
+                        <p>Optimal brewing temperature ranges from 85°C to 96°C depending on the method and bean origin.</p>
+                        <div class="temp-range">
+                            <div class="temp-item">
+                                <span>Espresso</span>
+                                <span>94°C</span>
+                            </div>
+                            <div class="temp-item">
+                                <span>Pour Over</span>
+                                <span>96°C</span>
+                            </div>
+                            <div class="temp-item">
+                                <span>Cold Brew</span>
+                                <span>Room Temp</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brewing-card glass-card">
+                        <div class="brewing-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Time</h3>
+                        <p>Extraction time determines flavor balance and strength. Each method has its optimal timing.</p>
+                        <div class="time-examples">
+                            <div class="time-item">
+                                <span>Espresso</span>
+                                <span>25-30s</span>
+                            </div>
+                            <div class="time-item">
+                                <span>French Press</span>
+                                <span>4min</span>
+                            </div>
+                            <div class="time-item">
+                                <span>Cold Brew</span>
+                                <span>12-24h</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brewing-card glass-card">
+                        <div class="brewing-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Ratio</h3>
+                        <p>Coffee to water ratio affects strength and flavor intensity. Find your perfect balance.</p>
+                        <div class="ratio-guide">
+                            <div class="ratio-item">
+                                <span>Strong</span>
+                                <span>1:12</span>
+                            </div>
+                            <div class="ratio-item">
+                                <span>Balanced</span>
+                                <span>1:15</span>
+                            </div>
+                            <div class="ratio-item">
+                                <span>Light</span>
+                                <span>1:18</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brewing-card glass-card">
+                        <div class="brewing-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Grind Size</h3>
+                        <p>Particle size affects extraction rate and brewing method compatibility.</p>
+                        <div class="grind-chart">
+                            <div class="grind-item">
+                                <span>Extra Fine</span>
+                                <span>Turkish</span>
+                            </div>
+                            <div class="grind-item">
+                                <span>Fine</span>
+                                <span>Espresso</span>
+                            </div>
+                            <div class="grind-item">
+                                <span>Medium</span>
+                                <span>Drip</span>
+                            </div>
+                            <div class="grind-item">
+                                <span>Coarse</span>
+                                <span>French Press</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>The Science of Perfect Coffee</h2>
+                        <p>
+                            Coffee brewing is both an art and a science. Understanding the variables that affect extraction 
+                            allows you to consistently create exceptional coffee experiences. From the chemical reactions 
+                            during roasting to the physics of water flow through coffee grounds, every aspect contributes 
+                            to the final cup.
+                        </p>
+                        <p>
+                            Our mission is to demystify the brewing process and provide you with the knowledge and tools 
+                            to unlock the full potential of your coffee beans. Whether you're a home enthusiast or 
+                            aspiring barista, these techniques will elevate your coffee game.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">1000+</span>
+                                <span class="stat-label">Volatile Compounds</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">96°C</span>
+                                <span class="stat-label">Optimal Temperature</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">1:15</span>
+                                <span class="stat-label">Golden Ratio</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="coffee-bean-animation">
+                            <div class="bean bean-1"></div>
+                            <div class="bean bean-2"></div>
+                            <div class="bean bean-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Coffee Alchemy</h3>
+                    <p>Master the art and science of perfect coffee brewing.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#recipes">Recipes</a></li>
+                        <li><a href="#brewing">Brewing Guide</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Coffee Alchemy. Crafted with passion for perfect coffee.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
